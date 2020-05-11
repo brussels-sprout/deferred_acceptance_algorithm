@@ -7,7 +7,7 @@ class Woman:
 
     def __init__(self, name, preferences):
         self.name = name  # string
-        self.preferences = preferences  # list
+        self.preferences = preferences  # list of objects; smaller index means higher preference
 
         self.engaged_with = None
         self.is_engaged = bool(self.engaged_with)
@@ -18,8 +18,8 @@ class Woman:
     def update_collection(cls, self):  # takes the class and the object; adds object to collection with its name as the key
         cls.collection.update({self.name: self})
 
-    def propose(self):
-        pass
+    def propose(self, man):  # man object that woman proposes to
+        man.be_proposed(self)
 
     def be_rejected(self, man):  # man object who rejected the woman object
         self.preferences.remove(man)

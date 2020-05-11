@@ -6,7 +6,8 @@ from Woman import Woman
 from Man import Man
 
 
-def algorithm(women_dict, men_dict):  # dict (dictionary) contains names (string) as keys and preferences (list) as values
+# dict (dictionary) contains names (string) as keys and preferences (list where smaller index is higher preference) as values
+def algorithm(women_dict, men_dict):
     create_objects(women_dict, men_dict)
 
     women = Woman.collection
@@ -18,7 +19,7 @@ def algorithm(women_dict, men_dict):  # dict (dictionary) contains names (string
         if False in [w.is_engaged for w in women]:  # if not all women are engaged
             for w in women.values():
                 if not w.is_engaged and len(w.preferences) != 0:
-                    pass
+                    w.propose(w.preferces[0])
         else:
             not_finished = False
 
@@ -29,3 +30,4 @@ def create_objects(women_dict, men_dict):
 
     for m in men_dict.items():
         Man(*m)
+
