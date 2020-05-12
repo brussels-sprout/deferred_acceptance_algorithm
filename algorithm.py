@@ -24,7 +24,7 @@ def algorithm(women_dict, men_dict):
 
 
 def create_objects(women_dict, men_dict):
-    for i in range(2):
+    for i in range(2):  # first time creates objects; second time assigns preferences
         for w in women_dict.items():
             Woman(*w)
 
