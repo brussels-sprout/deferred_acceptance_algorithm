@@ -19,6 +19,15 @@ def algorithm(women_input, men_input):
         else:
             not_finished = False
 
+    arrangements_with_objects = {}  # {woman: man, ...} (format; woman and man are objects)
+
+    for woman in women.values():
+        arrangements_with_objects.update({woman: woman.engaged_with})
+
+    arrangements_with_names = objects_to_names(arrangements_with_objects)
+
+    return arrangements_with_names
+
 
 def create_objects(women_input, men_input):
     # create objects without preferences
@@ -36,10 +45,20 @@ def create_objects(women_input, men_input):
         man.set_preferences(men_input[name])
 
 
+def objects_to_names(arrangements_with_objects):  # replaces objects in arrangements_with_objects with their names
+    arrangements_with_names = {}
+
+    for arrangement in arrangements_with_objects.items():
+        woman, man = arrangement
+        arrangements_with_names.update({woman.name: man.name})
+
+    return arrangements_with_names
+
+
 # test inputs
 women_in_test = {"1": ["b", "c", "d", "a"], "2": ["a", "d", "b", "c"], "3": ["c", "b", "d", "a"], "4": ["a", "b", "d", "c"]}
 men_in_test = {"a": ["1", "3", "2", "4"], "b": ["4", "3", "1", "2"], "c": ["2", "1", "3", "4"], "d": ["2", "3", "1", "4"]}
 
-algorithm(women_in_test, men_in_test)
+print(algorithm(women_in_test, men_in_test))
 
 # note: woman (variable name) is used for objects and w (variable name) for names of objects (strings)
