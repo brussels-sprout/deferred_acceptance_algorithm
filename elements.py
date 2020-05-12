@@ -11,10 +11,9 @@ class Woman:
         self.name = name  # string
 
         self.preferences = []  # list of objects; index 0 is the most preferable
-        # self.set_preferences(preferences)
 
         self.engaged_with = None  # man object
-        self.is_engaged = bool(self.engaged_with)  # bool(None) == False
+        self.is_engaged = False  # initially not engaged
 
         self.update_collection(self)
 
@@ -26,18 +25,21 @@ class Woman:
     def update_collection(cls, self):  # adds object to collection with its name as the key
         cls.collection.update({self.name: self})
 
+    def update_is_engaged(self):
+        self.is_engaged = bool(self.engaged_with)  # bool(None) == False
+
     def propose(self, man):  # man object that woman proposes to
         man.be_proposed(self)
 
     def be_engaged(self, man):  # man object who engaged the woman (could be temporary or permanent engagement)
         self.engaged_with = man
-        self.is_engaged = bool(self.engaged_with)
+        self.update_is_engaged()
 
     def be_rejected(self, man):  # man object who rejected the woman
         self.preferences.remove(man)
 
         self.engaged_with = None
-        self.is_engaged = bool(self.engaged_with)
+        self.update_is_engaged()
 
 
 class Man:
@@ -47,10 +49,9 @@ class Man:
         self.name = name  # string
 
         self.preferences = []  # list of objects; index 0 is the most preferable
-        # self.set_preferences(preferences)
 
         self.engaged_with = None  # woman object
-        self.is_engaged = bool(self.engaged_with)  # bool(None) == False
+        self.is_engaged = False  # initially not engaged
 
         self.update_collection(self)
 
@@ -61,6 +62,9 @@ class Man:
     @classmethod
     def update_collection(cls, self):  # adds object to collection with its name as the key
         cls.collection.update({self.name: self})
+
+    def update_is_engaged(self):
+        self.is_engaged = bool(self.engaged_with)  # bool(None) == False
 
     def be_proposed(self, woman):  # woman object man got proposed by
         if not self.is_engaged:  # man not engaged
@@ -74,7 +78,7 @@ class Man:
 
     def engage(self, woman):  # woman object man engaged (could be temporary or permanent engagement)
         self.engaged_with = woman
-        self.is_engaged = bool(self.engaged_with)
+        self.update_is_engaged()
 
         woman.be_engaged(self)
 
