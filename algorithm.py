@@ -11,8 +11,6 @@ def algorithm(women_input, men_input):
 
     not_finished = True
 
-    quit()
-
     while not_finished:
         if False in [woman.is_engaged for woman in women.values()]:  # if not all women are engaged
             for woman in women.values():
