@@ -1,6 +1,8 @@
 # deferred_acceptance_algorithm
 # by brussels_sprout
 
+# algorithm.py contains the pure algorithm
+
 # note: woman/man (variable name) is used for objects and w/m (variable name) for names of objects (strings)
 
 from elements import *
