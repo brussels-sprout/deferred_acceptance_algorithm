@@ -5,53 +5,53 @@
 class Woman:
     collection = {}  # {name: object, ...} (format)
 
-    def __init__(self, name, preferences):
+    def __init__(self, name, preferences):  # preferences (not self.preferences) is a list of names (strings)
         self.name = name  # string
 
-        self.preferences = []
+        self.preferences = []  # list of objects; index 0 is the most preferable
         self.set_preferences(preferences)
 
-        self.engaged_with = None
-        self.is_engaged = bool(self.engaged_with)
+        self.engaged_with = None  # man object
+        self.is_engaged = bool(self.engaged_with)  # bool(None) == False
 
         self.update_collection(self)
 
-    def set_preferences(self, preferences):  # parameter is list of strings
+    def set_preferences(self, preferences):  # adds man objects to woman's preference list
         if men == {}:
             pass
         else:
-            for p in preferences:
+            for p in preferences:  # p is a name (string)
                 self.preferences.append(men[p])
 
     @classmethod
-    def update_collection(cls, self):  # takes the class and the object; adds object to collection with its name as the key
+    def update_collection(cls, self):  # adds object to collection with its name as the key
         cls.collection.update({self.name: self})
 
     def propose(self, man):  # man object that woman proposes to
         man.be_proposed(self)
 
-    def be_rejected(self, man):  # man object who rejected the woman object
-        self.preferences.remove(man)
-
     def be_engaged(self, man):  # man object who engaged the woman (could be temporary or permanent engagement)
         self.engaged_with = man
+
+    def be_rejected(self, man):  # man object who rejected the woman
+        self.preferences.remove(man)
 
 
 class Man:
     collection = {}  # {name: object, ...} (format)
 
-    def __init__(self, name, preferences):
+    def __init__(self, name, preferences):  # preferences (not self.preferences) is a list of names (strings)
         self.name = name  # string
 
-        self.preferences = []
+        self.preferences = []  # list of objects; index 0 is the most preferable
         self.set_preferences(preferences)
 
         self.engaged_with = None  # woman object
-        self.is_engaged = bool(self.engaged_with)
+        self.is_engaged = bool(self.engaged_with)  # bool(None) == False
 
         self.update_collection(self)
 
-    def set_preferences(self, preferences):  # parameter is list of strings
+    def set_preferences(self, preferences):  # adds woman objects to man's preference list
         if women == {}:
             pass
         else:
@@ -59,24 +59,25 @@ class Man:
                 self.preferences.append(women[p])
 
     @classmethod
-    def update_collection(cls, self):  # takes the class and the object; adds object to collection with its name as the key
+    def update_collection(cls, self):  # adds object to collection with its name as the key
         cls.collection.update({self.name: self})
 
     def be_proposed(self, woman):  # woman object man got proposed by
-        if not self.is_engaged:
+        if not self.is_engaged:  # man not engaged
             self.engage(woman)
+        # if woman proposing is more preferable than engaged woman then ...
         elif self.preferences.index(woman) < self.preferences.index(self.engaged_with):
             self.reject(self.engaged_with)
             self.engage(woman)
         else:
             self.reject(woman)
 
-    def reject(self, woman):  # woman object man rejected
-        woman.be_rejected(self)
-
     def engage(self, woman):  # woman object man engaged (could be temporary or permanent engagement)
         self.engaged_with = woman
         woman.be_engaged(self)
+
+    def reject(self, woman):  # woman object man rejected
+        woman.be_rejected(self)
 
 
 women = Woman.collection
