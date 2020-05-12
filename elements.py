@@ -3,7 +3,7 @@
 
 
 class Woman:
-    collection = {}
+    collection = {}  # {name: object, ...} (format)
 
     def __init__(self, name, preferences):
         self.name = name  # string
@@ -38,7 +38,7 @@ class Woman:
 
 
 class Man:
-    collection = {}
+    collection = {}  # {name: object, ...} (format)
 
     def __init__(self, name, preferences):
         self.name = name  # string
