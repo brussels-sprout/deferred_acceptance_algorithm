@@ -9,27 +9,28 @@ from elements import *
 def algorithm(women_input, men_input):
     create_objects(women_input, men_input)
 
-    print(women)
-    print(men)
-
     not_finished = True
 
+    quit()
+
     while not_finished:
-        if False in [w.is_engaged for w in women.values()]:  # if not all women are engaged
-            for w in women.values():
-                if not w.is_engaged and len(w.preferences) != 0:
-                    w.propose(w.preferences[0])
+        if False in [woman.is_engaged for woman in women.values()]:  # if not all women are engaged
+            for woman in women.values():
+                if not woman.is_engaged:
+                    woman.propose(woman.preferences[0])
         else:
             not_finished = False
 
 
 def create_objects(women_input, men_input):
+    # create objects without preferences
     for w in women_input.items():
         Woman(w[0])  # w[0] is only the name (string)
 
     for m in men_input.items():
         Man(m[0])  # m[0] is only the name (string)
 
+    # set preferences of created objects
     for name, woman in women.items():  # name is woman.name (string)
         woman.set_preferences(women_input[name])
 
