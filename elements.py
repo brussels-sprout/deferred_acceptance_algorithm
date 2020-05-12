@@ -3,7 +3,7 @@
 
 
 class Woman:
-    collection = {}  # {name: object, ...} (format)
+    collection = {}  # {object.name: object, ...} (format)
 
     def __init__(self, name, preferences):  # preferences (not self.preferences) is a list of names (strings)
         self.name = name  # string
@@ -38,7 +38,7 @@ class Woman:
 
 
 class Man:
-    collection = {}  # {name: object, ...} (format)
+    collection = {}  # {object.name: object, ...} (format)
 
     def __init__(self, name, preferences):  # preferences (not self.preferences) is a list of names (strings)
         self.name = name  # string
