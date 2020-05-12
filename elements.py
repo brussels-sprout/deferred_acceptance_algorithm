@@ -17,11 +17,8 @@ class Woman:
         self.update_collection(self)
 
     def set_preferences(self, preferences):  # adds man objects to woman's preference list
-        if men == {}:
-            pass
-        else:
-            for p in preferences:  # p is a name (string)
-                self.preferences.append(men[p])
+        for p in preferences:  # p is a name (string)
+            self.preferences.append(men[p])
 
     @classmethod
     def update_collection(cls, self):  # adds object to collection with its name as the key
@@ -32,11 +29,13 @@ class Woman:
 
     def be_engaged(self, man):  # man object who engaged the woman (could be temporary or permanent engagement)
         self.engaged_with = man
+        self.is_engaged = bool(self.engaged_with)
 
     def be_rejected(self, man):  # man object who rejected the woman
         self.preferences.remove(man)
 
         self.engaged_with = None
+        self.is_engaged = bool(self.engaged_with)
 
 
 class Man:
@@ -54,11 +53,8 @@ class Man:
         self.update_collection(self)
 
     def set_preferences(self, preferences):  # adds woman objects to man's preference list
-        if women == {}:
-            pass
-        else:
-            for p in preferences:
-                self.preferences.append(women[p])
+        for p in preferences:
+            self.preferences.append(women[p])
 
     @classmethod
     def update_collection(cls, self):  # adds object to collection with its name as the key
@@ -76,6 +72,8 @@ class Man:
 
     def engage(self, woman):  # woman object man engaged (could be temporary or permanent engagement)
         self.engaged_with = woman
+        self.is_engaged = bool(self.engaged_with)
+
         woman.be_engaged(self)
 
     def reject(self, woman):  # woman object man rejected
