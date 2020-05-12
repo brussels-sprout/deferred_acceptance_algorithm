@@ -1,6 +1,7 @@
 # deferred_acceptance_algorithm
 # by brussels_sprout
 
+# note: woman/man (variable name) is used for objects and w/m (variable name) for names of objects (strings)
 
 from elements import *
 
@@ -60,5 +61,3 @@ women_in_test = {"1": ["b", "c", "d", "a"], "2": ["a", "d", "b", "c"], "3": ["c"
 men_in_test = {"a": ["1", "3", "2", "4"], "b": ["4", "3", "1", "2"], "c": ["2", "1", "3", "4"], "d": ["2", "3", "1", "4"]}
 
 print(algorithm(women_in_test, men_in_test))
-
-# note: woman (variable name) is used for objects and w (variable name) for names of objects (strings)
