@@ -5,11 +5,11 @@
 class Woman:
     collection = {}  # {object.name: object, ...} (format)
 
-    def __init__(self, name, preferences):  # preferences (not self.preferences) is a list of names (strings)
+    def __init__(self, name):  # preferences (not self.preferences) is a list of names (strings)
         self.name = name  # string
 
         self.preferences = []  # list of objects; index 0 is the most preferable
-        self.set_preferences(preferences)
+        # self.set_preferences(preferences)
 
         self.engaged_with = None  # man object
         self.is_engaged = bool(self.engaged_with)  # bool(None) == False
@@ -40,11 +40,11 @@ class Woman:
 class Man:
     collection = {}  # {object.name: object, ...} (format)
 
-    def __init__(self, name, preferences):  # preferences (not self.preferences) is a list of names (strings)
+    def __init__(self, name):  # preferences (not self.preferences) is a list of names (strings)
         self.name = name  # string
 
         self.preferences = []  # list of objects; index 0 is the most preferable
-        self.set_preferences(preferences)
+        # self.set_preferences(preferences)
 
         self.engaged_with = None  # woman object
         self.is_engaged = bool(self.engaged_with)  # bool(None) == False
