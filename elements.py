@@ -36,6 +36,8 @@ class Woman:
     def be_rejected(self, man):  # man object who rejected the woman
         self.preferences.remove(man)
 
+        self.engaged_with = None
+
 
 class Man:
     collection = {}  # {object.name: object, ...} (format)
