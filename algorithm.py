@@ -3,6 +3,9 @@
 
 # algorithm.py contains the pure algorithm
 
+# Regarding the notation ("woman" and "man") used in the code, it is according to
+# the Numberphile video (https://youtu.be/Qcv1IqHWAzg) on this problem.
+
 # note: woman/man (variable name) is used for objects and w/m (variable name) for names of objects (strings)
 
 from elements import *
