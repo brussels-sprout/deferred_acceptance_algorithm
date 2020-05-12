@@ -8,6 +8,8 @@
 
 # note: woman/man (variable name) is used for objects and w/m (variable name) for names of objects (strings)
 
+# todo elaborate on and fix object names (woman and w/man and m)
+
 from elements import *
 
 
