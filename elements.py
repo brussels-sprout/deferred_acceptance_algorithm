@@ -1,6 +1,8 @@
 # deferred_acceptance_algorithm
 # by brussels_sprout
 
+# elements.py contains the class definitions and related variables
+
 
 class Woman:
     collection = {}  # {object.name: object, ...} (format)
