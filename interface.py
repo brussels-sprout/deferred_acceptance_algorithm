@@ -5,6 +5,9 @@
 # interface.py contains the interface code
 
 
+TAB = "    "
+
+
 def intro():
     title()
     info()
@@ -37,10 +40,17 @@ def separator():
 def input_():
     separator()
 
-    print("Group A:")
-    women_inter = input("   Input the names of group A's members: ")  # inter for intermediate
+    women_dict = {}
+    women_names = extractor(input(f"{TAB}Input the names of group A's members: "))
+    for name in women_names:
+        preferences = extractor(input(f"{TAB}Input {name}'s preferences: "))
+        women_dict.update({name: preferences})
 
     separator()
+
+
+def extractor(string):
+    return string.split(", ")
 
 
 def output():
