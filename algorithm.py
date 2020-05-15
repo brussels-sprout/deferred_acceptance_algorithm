@@ -6,9 +6,6 @@
 # Regarding the notation ("woman" and "man") used in the code, it is according to
 # the Numberphile video (https://youtu.be/Qcv1IqHWAzg) on this problem.
 
-# note: woman/man (variable name) is used for objects and w/m (variable name) for names of objects (strings)
-
-# todo elaborate on and fix object names (woman and w/man and m)
 
 from elements import *
 
@@ -61,7 +58,6 @@ def objects_to_names(arrangements_with_objects):  # replaces objects in arrangem
         arrangements_with_names.update({woman.name: man.name})
 
     return arrangements_with_names
-
 
 # Example inputs and output:
 # women_in_test = {"1": ["b", "c", "d", "a"], "2": ["a", "d", "b", "c"], "3": ["c", "b", "d", "a"], "4": ["a", "b", "d", "c"]}
