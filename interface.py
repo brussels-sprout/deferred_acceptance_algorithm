@@ -31,7 +31,7 @@ def example():
 
 
 def separator():
-    print("\n-------------------------")
+    print("\n-------------------------\n")
 
 
 def input_():
