@@ -19,8 +19,7 @@ def title():
 def info():
     print("Information:")
     print(" • For an explanation of the algorithm and the problem watch https://youtu.be/Qcv1IqHWAzg by Numberphile.")
-    print(" • The notations used (\"woman\" and \"man\") are according the the Numberphile video.")
-    print(" • So, in this program, the women \"propose\" to the men.")
+    print(" • The members of group A \"propose\" to the members of group B.")
     print(" • Note that the inputs and output are case sensitive.")
     print(" • Also note that this program currently only solves the problem for two sets of elements of equal size.\n")
 
@@ -31,12 +30,17 @@ def example():
     print(" • Preferences: Harry, Charlie, Harry (separated by a comma and a space (\", \") and in descending order of preference (first is the most preferable))")
 
 
-def input_():
+def separator():
     print("\n-------------------------")
 
-    women_inter = input("Input the women's names separated by commas and spaces: ")  # inter for intermediate
 
-    print("-------------------------\n")
+def input_():
+    separator()
+
+    print("Group A:")
+    women_inter = input("   Input the names of group A's members: ")  # inter for intermediate
+
+    separator()
 
 
 def output():
