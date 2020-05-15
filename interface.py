@@ -7,11 +7,16 @@
 
 def intro():
     title()
+    info()
 
 
 def title():
     print("\033[1m" + "Deferred Acceptance Algorithm" + "\033[0;0m" + "\nby brussels-sprout\n")
     # weird things make it bold
+
+
+def info():
+    pass
 
 
 def input_():
