@@ -9,9 +9,9 @@ from interface import intro, input_, output, end
 
 
 def main():
-    pass
+    input_()
+    end(main)
 
 
 intro()
 main()
-end(main)
