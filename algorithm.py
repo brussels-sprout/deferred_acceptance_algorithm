@@ -39,11 +39,11 @@ def algorithm(women_input, men_input):
 
 def create_objects(women_input, men_input):
     # create objects without preferences
-    for w in women_input.items():
-        Woman(w[0])  # w[0] is only the name (string)
+    for w in women_input.keys():
+        Woman(w)  # w is just the woman's name
 
-    for m in men_input.items():
-        Man(m[0])  # m[0] is only the name (string)
+    for m in men_input.keys():
+        Man(m)  # m is just the man's name
 
     # set preferences of created objects
     for name, woman in women.items():  # name is woman.name (string)
