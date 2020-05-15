@@ -8,6 +8,7 @@
 def intro():
     title()
     info()
+    example()
 
 
 def title():
@@ -21,11 +22,21 @@ def info():
     print(" • The notations used (\"woman\" and \"man\") are according the the Numberphile video.")
     print(" • So, in this program, the women \"propose\" to the men.")
     print(" • Note that the inputs and output are case sensitive.")
-    print(" • Also note that this program currently only solves the problem for two sets of elements of equal size.")
+    print(" • Also note that this program currently only solves the problem for two sets of elements of equal size.\n")
+
+
+def example():
+    print("Example inputs:")
+    print(" • Names: Olivia, Willow, Sarah (separated by a comma and a space (\", \"))")
+    print(" • Preferences: Harry, Charlie, Harry (separated by a comma and a space (\", \") and in descending order of preference (first is the most preferable))")
 
 
 def input_():
-    pass
+    print("\n-------------------------")
+
+    women_inter = input("Input the women's names separated by commas and spaces: ")  # inter for intermediate
+
+    print("-------------------------\n")
 
 
 def output():
