@@ -30,20 +30,19 @@ def example():
     print(" • Preferences: Harry, Charlie, Harry (separated by a comma and a space (\", \") and in descending order of preference (first is the most preferable))")
 
 
-def separator():
-    print("\n-------------------------\n")
-
-
 def input_():
-    separator()
 
     women_dict = {}
     women_names = extractor(input(f"Input the names of group A's members: "))
     for name in women_names:
-        preferences = extractor(input(f"Input {name}'s preferences: "))
+        preferences = extractor(input(f"\nInput {name}'s preferences: "))
         women_dict.update({name: preferences})
 
-    separator()
+    men_dict = {}
+    men_names = extractor(input(f"Input the names of group B's members: "))
+    for name in men_names:
+        preferences = extractor(input(f"\nInput {name}'s preferences: "))
+        men_dict.update({name: preferences})
 
 
 def extractor(string):
