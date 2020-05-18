@@ -47,7 +47,7 @@ def input_():
         preferences = extractor(input(f"Input {name}'s preferences: "))
         men_dict.update({name: preferences})
 
-    if not check_equal_size(women_dict, men_dict):
+    if not check_groups_size(women_dict, men_dict) or not check_preferences_size(women_dict, men_dict):
         invalid_input(input_)
 
 
@@ -56,7 +56,7 @@ def extractor(string):
 
 
 def invalid_input(func):  # func is function to run again
-    print("\nInvalid input. Please try again.\n")
+    print("\nInvalid input. Please try again.")
     func()
 
 
