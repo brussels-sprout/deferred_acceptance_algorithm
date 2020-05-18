@@ -102,8 +102,11 @@ def check_preferences_content(group_a, group_b):  # # checks if the preferences 
     return True
 
 
-def output():
-    pass
+def output(arrangements):  # result is a dictionary
+    print("\n-----Output-----\n")
+    for woman in arrangements:
+        man = arrangements[woman]
+        print(f"{woman} is arranges to {man}")
 
 
 def end(func):  # func is function to run again
