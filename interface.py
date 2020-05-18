@@ -53,6 +53,8 @@ def input_():
     if not check_preferences_content(women_dict, men_dict):
         invalid_input(input_)
 
+    return women_dict, men_dict
+
 
 def extractor(string):
     return string.split(", ")
