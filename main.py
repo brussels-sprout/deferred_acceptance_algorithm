@@ -10,8 +10,8 @@ from interface import intro, input_, output, end
 
 def main():
     women_input, men_input = input_()
-    result = algorithm(women_input, men_input)
-    output(result)
+    arrangements = algorithm(women_input, men_input)
+    output(arrangements)
     end(main)
 
 
