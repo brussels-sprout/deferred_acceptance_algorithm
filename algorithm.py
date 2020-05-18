@@ -59,6 +59,7 @@ def objects_to_names(arrangements_with_objects):  # replaces objects in arrangem
 
     return arrangements_with_names
 
+
 # Example inputs and output:
 # women_in_test = {"1": ["b", "c", "d", "a"], "2": ["a", "d", "b", "c"], "3": ["c", "b", "d", "a"], "4": ["a", "b", "d", "c"]}
 # men_in_test = {"a": ["1", "3", "2", "4"], "b": ["4", "3", "1", "2"], "c": ["2", "1", "3", "4"], "d": ["2", "3", "1", "4"]}
