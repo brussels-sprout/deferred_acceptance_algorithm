@@ -31,32 +31,51 @@ def example():
 
 
 def input_():
+    print("\n-----Input-----")
 
     women_dict = {}
-    women_names = extractor(input(f"Input the names of group A's members: "))
+    women_names = extractor(input(f"\nInput the names of group A's members: "))
+    print()  # empty line
     for name in women_names:
-        preferences = extractor(input(f"\nInput {name}'s preferences: "))
+        preferences = extractor(input(f"Input {name}'s preferences: "))
         women_dict.update({name: preferences})
 
     men_dict = {}
-    men_names = extractor(input(f"Input the names of group B's members: "))
+    men_names = extractor(input(f"\nInput the names of group B's members: "))
+    print()  # empty line
     for name in men_names:
-        preferences = extractor(input(f"\nInput {name}'s preferences: "))
+        preferences = extractor(input(f"Input {name}'s preferences: "))
         men_dict.update({name: preferences})
+
+    if check_equal_size(women_dict, men_dict):
+        pass
+    else:
+        error()
 
 
 def extractor(string):
     return string.split(", ")
 
 
+def error():
+
+
+
+def check_equal_size(group_a, group_b):  # checks if the two groups have equal size
+    if len(group_a) == len(group_b):
+        return True
+    else:
+        return False
+
+
 def output():
     pass
 
 
-def end(main):  # main is function to run again
+def end(func):  # func is function to run again
     if input("\nInput any character(s) to run again or simply press ENTER to exit: ") == "":
         print("\nDone.")
         exit()
     else:
         print("")
-        main()
+        func()
