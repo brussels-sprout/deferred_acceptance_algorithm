@@ -60,11 +60,23 @@ def invalid_input(func):  # func is function to run again
     func()
 
 
-def check_equal_size(group_a, group_b):  # checks if the two groups have equal size
+def check_groups_size(group_a, group_b):  # checks if the two groups have equal size
     if len(group_a) == len(group_b):
         return True
     else:
         return False
+
+
+def check_preferences_size(group_a, group_b):  # checks if the preferences of each group are the same size as the other group
+    for preferences in group_a.values():
+        if not len(preferences) == len(group_b):
+            return False
+
+    for preferences in group_b.values():
+        if not len(preferences) == len(group_a):
+            return False
+
+    return True
 
 
 def output():
