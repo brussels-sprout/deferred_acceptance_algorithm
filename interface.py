@@ -106,7 +106,7 @@ def output(arrangements):  # result is a dictionary
     print("\n-----Output-----\n")
     for woman in arrangements:
         man = arrangements[woman]
-        print(f"{woman} is arranges to {man}")
+        print(f"{woman} arranges to {man}")
 
 
 def end(func):  # func is function to run again
