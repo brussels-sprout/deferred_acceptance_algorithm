@@ -50,6 +50,9 @@ def input_():
     if not check_sizes(women_dict, men_dict):
         invalid_input(input_)
 
+    if not check_preferences_content(women_dict, men_dict):
+        invalid_input(input_)
+
 
 def extractor(string):
     return string.split(", ")
@@ -83,8 +86,18 @@ def check_preferences_size(group_a, group_b):  # checks if the preferences of ea
     return True
 
 
-def check_contents(group_a, group_b):
-    pass
+def check_preferences_content(group_a, group_b):  # # checks if the preferences of each group only contain the names of the other group
+    for preferences in group_a.values():
+        for preference in preferences:
+            if preference not in group_b.keys():
+                return False
+
+    for preferences in group_b.values():
+        for preference in preferences:
+            if preference not in group_a.keys():
+                return False
+
+    return True
 
 
 def output():
