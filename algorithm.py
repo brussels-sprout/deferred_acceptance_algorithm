@@ -65,7 +65,8 @@ def objects_to_names(arrangements_with_objects):
     return arrangements_with_names
 
 
-# Control (Test/Example) inputs and output
+# Control (Test/Example) code that
+# should print {'1': 'c', '2': 'a', '3': 'd', '4': 'b'}:
 # women_input_test = {
 #     "1": ["b", "c", "d", "a"],
 #     "2": ["a", "d", "b", "c"],
@@ -80,4 +81,3 @@ def objects_to_names(arrangements_with_objects):
 # }
 #
 # print(algorithm(women_input_test, men_input_test))
-# should print {'1': 'c', '2': 'a', '3': 'd', '4': 'b'}
